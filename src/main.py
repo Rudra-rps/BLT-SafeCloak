@@ -17,6 +17,7 @@ from libs.utils import (
 PAGES_MAP = {
     '/': 'index.html',
     '/video-chat': 'video-chat.html',
+    '/video-room': 'video-room.html',
     '/notes': 'notes.html',
     '/consent': 'consent.html',
 }
