@@ -568,6 +568,24 @@ const VideoChat = (() => {
     }
   }
 
+  function getStoredMirrorPreference() {
+    try {
+      const raw = window.sessionStorage.getItem(MIRROR_PREFS_STORAGE_KEY);
+      if (raw === null) return true;
+      return raw === "true";
+    } catch {
+      return true;
+    }
+  }
+
+  function persistMirrorPreference() {
+    try {
+      window.sessionStorage.setItem(MIRROR_PREFS_STORAGE_KEY, String(mirrorEnabled));
+    } catch {
+      /* ignore storage failures */
+    }
+  }
+
   /* ── Browser detection ── */
   function detectBrowser() {
     const ua = navigator.userAgent;

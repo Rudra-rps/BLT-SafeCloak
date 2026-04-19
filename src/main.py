@@ -141,7 +141,6 @@ class Default(WorkerEntrypoint):
         """Handle incoming HTTP requests and route them to the appropriate response."""
         url = urlparse(request.url)
         path = url.path
-
         try:
             # Handle CORS preflight
             if request.method == 'OPTIONS':
